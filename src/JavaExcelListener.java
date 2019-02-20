@@ -3,10 +3,10 @@ import java.util.List;
 /**
  * 可根据实际需要修改输出的数据格式
  */
-public class CustExcelListener extends BaseExcelListener {
+public class JavaExcelListener extends BaseExcelListener {
 
-    public CustExcelListener() {
-        typeMap.put("number", "Decimal");
+    public JavaExcelListener() {
+        typeMap.put("number", "BigDecimal");
         typeMap.put("integer", "int");
         typeMap.put("string", "String");
     }
@@ -18,7 +18,7 @@ public class CustExcelListener extends BaseExcelListener {
         int colDescIndex = 4;
 
         sb.append("/**").append(NEW_LINE)
-                .append("*").append(list.get(colDescIndex)).append(NEW_LINE)
+                .append("* ").append(list.get(colDescIndex)).append(NEW_LINE)
                 .append("*/").append(NEW_LINE);
 
         sb.append("public")

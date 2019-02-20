@@ -6,9 +6,9 @@ import java.io.InputStream;
 
 public class Parser {
     public static void main(String[] args) {
-        String filePath = "d:/temp/data.xlsx";
+        String filePath = "/Users/jerry/Desktop/test.xlsx";
         ExcelTypeEnum excelTypeEnum = ExcelTypeEnum.XLSX;
-        BaseExcelListener listener = new CustExcelListener();
+        BaseExcelListener listener = new KotlinExcelListener();
         processExcel(filePath,excelTypeEnum,listener);
     }
 
