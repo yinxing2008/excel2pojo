@@ -16,14 +16,28 @@ public class KotlinExcelListener extends BaseExcelListener {
         int colNameIndex = 0;
         int colTypeIndex = 1;
         int colDescIndex = 4;
+        if (list.get(colNameIndex) == null || list.get(colTypeIndex) == null )
+            return "";
 
-        sb.append("/**").append(NEW_LINE)
-                .append("* ").append(list.get(colDescIndex)).append(NEW_LINE)
-                .append("*/").append(NEW_LINE);
-        sb.append("var")
-                .append(" ").append(list.get(colNameIndex))
-                .append(": ").append(getMappedType(list.get(colTypeIndex).toString()))
-                .append("? = null").append(NEW_LINE);
+        String colName = list.get(colNameIndex).toString().trim();
+        String colType = list.get(colTypeIndex).toString().trim();
+        String colDesc = "";
+        if (list.get(colDescIndex) != null) {
+            colDesc = list.get(colDescIndex).toString().trim();
+        }
+
+        if (!colDesc.isEmpty()) {
+            sb.append("/**").append(NEW_LINE)
+                    .append("* ").append(colDesc).append(NEW_LINE)
+                    .append("*/").append(NEW_LINE);
+        }
+        if (!colName.isEmpty() && !colType.isEmpty()) {
+            sb.append("var")
+                    .append(" ").append(colName)
+                    .append(": ").append(getMappedType(colType))
+                    .append("? = null").append(NEW_LINE);
+        }
+
         return sb.toString();
     }
 

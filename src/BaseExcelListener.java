@@ -19,17 +19,17 @@ public abstract class BaseExcelListener extends AnalysisEventListener {
     public void invoke(Object object, AnalysisContext context) {
         data.add(object);
         if (data.size() >= 100) {
-            doSomething();
+            processData();
             data = new ArrayList<>();
         }
     }
 
     @Override
     public void doAfterAllAnalysed(AnalysisContext context) {
-        doSomething();
+        processData();
     }
 
-    public void doSomething() {
+    public void processData() {
         StringBuffer sb = new StringBuffer();
         for (Object o : data) {
             sb.append(processRow((List) o));
