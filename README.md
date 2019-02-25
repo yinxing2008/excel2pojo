@@ -35,3 +35,6 @@ public BigDecimal itemCount;
 # 使用
 1. 将字段定义存入excel文件，修改Parser类中filePath为excel文件格式（注意excel应该是2007格式，后缀为xlsx）
 2. 运行Parser类，完成后，就会将生成的bean信息打印在终端并复制到剪贴板。
+
+# 附录
+关联博客：https://www.jianshu.com/p/269e7b7e882a
