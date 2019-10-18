@@ -15,7 +15,7 @@ public class JavaExcelListener extends BaseExcelListener {
         StringBuffer sb = new StringBuffer();
         int colNameIndex = 0;
         int colTypeIndex = 1;
-        int colDescIndex = 4;
+        int colDescIndex = 3;
         if (list.get(colNameIndex) == null || list.get(colTypeIndex) == null)
             return "";
 
@@ -37,7 +37,6 @@ public class JavaExcelListener extends BaseExcelListener {
                     .append(" ").append(colName)
                     .append(";").append(NEW_LINE);
         }
-        System.out.println(sb.toString());
 
         return sb.toString();
     }

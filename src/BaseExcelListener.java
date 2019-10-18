@@ -39,7 +39,12 @@ public abstract class BaseExcelListener extends AnalysisEventListener {
     }
 
     protected String getMappedType(String type) {
-        return typeMap.get(type);
+        type = type.trim();
+        String result = type;
+        if (typeMap.containsKey(type)) {
+            result = typeMap.get(type);
+        }
+        return result;
     }
 
     protected abstract String processRow(List list);
